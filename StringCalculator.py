@@ -33,18 +33,17 @@ class StringCalculator:
   def FindNumbers(self, cutted_nums:str)->int:
     item = ""
     for i in cutted_nums:#iterate numbers
-      if i in self.delimeters:#is a delimeter?
-        if item != "":
-          self.SumNumber(item) #sum concatenated number item
+      if i in self.delimeters:#is a delimeter
+        self.SumNumber(item) #sum concatenated number
         item = ""
-      elif i.isdigit() or i == '-':#is negative or number?
+      elif i.isdigit() or i == '-':#is negative or number
         item += i #concat character to number item
     self.SumNumber(item)
 
   def SumNumber(self, strNumber:str):
     if(strNumber != ""):
       number = int(strNumber)
-      if (number < 0): # add to negative list
+      if (number < 0):#add to negative list
         self.negatives.append(number)
       elif(number < 1000):#only sum if less then a thousand
         self.total_summ += number
@@ -64,7 +63,6 @@ def CalculatorTester(inputStr:str, expected:int, mustThrow:bool):
       print("FAILED--{0}--".format(replaced))
     else:
       print("Passed--{0}".format(replaced))
-
 
 
 
