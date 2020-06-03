@@ -9,5 +9,5 @@ The code is written using Python3
 
 ## Run
 ``` bash
-# git clone https://github.com/davidmadi/StringCalculator
+# python3 StringCalculator.py
 ```
